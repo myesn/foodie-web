@@ -1,4 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
+import { isError } from 'lodash-es';
 
 const user = (state) => state.user;
 
@@ -10,6 +11,11 @@ export const selectIsAuthenticated = createSelector(
 export const selectAvatar = createSelector([user], (user) => user.current.face);
 
 export const selectUser = createSelector(user);
+
+export const selectNickName = createSelector(
+  [user],
+  (user) => user.current.nickname
+);
 
 // demo
 export const selectTest = createSelector(
