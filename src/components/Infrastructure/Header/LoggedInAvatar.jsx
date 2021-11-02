@@ -10,14 +10,14 @@ const LoggedInAvatar = () => {
   const nickName = useSelector(selectNickName);
   const dispatch = useDispatch();
   const history = useHistory();
-  const { Title } = Typography;
+  const { Text } = Typography;
 
   const handleSignoutClick = () => dispatch(signoutAction());
   const handleAvatarClick = () => history.push('/profile');
   const menus = [
     {
       node: 'title',
-      name: <Title heading={6} strong={false}>{nickName}</Title>,
+      name: <Text>{nickName}</Text>,
       type: 'tertiary',
     },
     {
