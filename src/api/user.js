@@ -9,5 +9,5 @@ export function signup(data) {
 }
 
 export function signin(data) {
-  return post('/passport/signin', data);
+  return post('/passport/sign-in', data);
 }
