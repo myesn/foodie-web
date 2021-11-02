@@ -1,20 +1,26 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 const user = (state) => state.user;
+const current = (state) => state.user.current;
 
 export const selectIsAuthenticated = createSelector(
   [user],
-  (user) => user.isAuthenticated
+  (state) => state.isAuthenticated
 );
 
-export const selectAvatar = createSelector([user], (user) => user.current.face);
+export const selectAvatar = createSelector(
+  [current],
+  (current) => current.face
+);
 
 export const selectUser = createSelector(user);
 
 export const selectNickName = createSelector(
-  [user],
-  (user) => user.current.nickname
+  [current],
+  (current) => current.nickname
 );
+
+export const selectUserId = createSelector([current], (current) => current.id);
 
 // demo
 export const selectTest = createSelector(

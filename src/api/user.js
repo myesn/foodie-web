@@ -11,3 +11,7 @@ export function signup(data) {
 export function signin(data) {
   return post('/passport/sign-in', data);
 }
+
+export function signout(userId) {
+  return post(`/passport/sign-out?userId=${userId}`);
+}
