@@ -1,5 +1,4 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { isError } from 'lodash-es';
 
 const user = (state) => state.user;
 

@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Avatar, Dropdown } from '@douyinfe/semi-ui';
+import { Avatar, Dropdown, Typography } from '@douyinfe/semi-ui';
 
 import { selectAvatar, selectNickName } from '../../../utils/commonSelector';
 import { signoutAction } from '../../../actions/user';
@@ -10,13 +10,14 @@ const LoggedInAvatar = () => {
   const nickName = useSelector(selectNickName);
   const dispatch = useDispatch();
   const history = useHistory();
+  const { Title } = Typography;
 
   const handleSignoutClick = () => dispatch(signoutAction());
   const handleAvatarClick = () => history.push('/profile');
   const menus = [
     {
       node: 'title',
-      name: nickName,
+      name: <Title heading={6} strong={false}>{nickName}</Title>,
       type: 'tertiary',
     },
     {
