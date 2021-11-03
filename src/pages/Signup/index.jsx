@@ -4,7 +4,7 @@ import { Form, Button, Col, Row, Toast } from '@douyinfe/semi-ui';
 
 import awaiter from '../../utils/awaiter';
 import { required, min } from '../../utils/formRule';
-import { user } from '../../api';
+import api from '../../api';
 
 const Signup = () => {
   const [signupLoading, setSignupLoading] = useState(false);
@@ -21,7 +21,7 @@ const Signup = () => {
       return '用户名不能为空';
     }
 
-    const [, error] = await awaiter(user.checkUsername(value));
+    const [, error] = await awaiter(api.user.checkUsername(value));
     if (error) {
       return error.response.data.message;
     }
@@ -35,10 +35,8 @@ const Signup = () => {
       return;
     }
 
-    const { signup } = user;
-
     setSignupLoading(true);
-    const [, error] = await awaiter(signup(values));
+    const [, error] = await awaiter(api.user.signup(values));
     setSignupLoading(false);
 
     if (error) {

@@ -2,7 +2,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Avatar, Dropdown, Typography } from '@douyinfe/semi-ui';
 
-import { user } from '../../../api';
 import awaiter from '../../../utils/awaiter';
 import {
   selectAvatar,
@@ -20,14 +19,10 @@ const LoggedInAvatar = () => {
   const { Text } = Typography;
 
   const handleSignoutClick = async () => {
-    const { signout } = user;
-
-    const [, error] = await awaiter(signout(userId));
+    const [, error] = await awaiter(dispatch(signoutAction(userId)));
     if (error) {
       return;
     }
-
-    dispatch(signoutAction());
   };
   const handleAvatarClick = () => history.push('/profile');
   const menus = [

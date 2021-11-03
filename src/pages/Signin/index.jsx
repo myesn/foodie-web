@@ -13,7 +13,6 @@ import {
 
 import { required, min } from '../../utils/formRule';
 import awaiter from '../../utils/awaiter';
-import { user } from '../../api';
 import { signinAction } from '../../actions/user';
 
 const Signin = () => {
@@ -28,22 +27,19 @@ const Signin = () => {
     style: { width: '176px' },
   };
   const handleSignInClick = async (formApi) => {
-    const { signin } = user;
     const [values, formError] = await awaiter(formApi.validate());
     if (formError) {
       return;
     }
 
     setSignInLoading(true);
-    const [data, error] = await awaiter(signin(values));
+    const [, error] = await awaiter(dispatch(signinAction(values)));
     setSignInLoading(false);
-
     if (error) {
       return;
     }
 
     Toast.success('登录成功');
-    dispatch(signinAction(data.data));
     history.push('/');
   };
 

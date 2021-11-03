@@ -1,3 +1,5 @@
 import * as user from './user';
 
-export { user };
+const api = { user };
+
+export default api;
