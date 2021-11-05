@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Slider from 'react-slick';
-import { Col, Row } from '@douyinfe/semi-ui';
 
 import api from '../../api';
 import awaiter from '../../utils/awaiter';
@@ -31,19 +30,23 @@ const Home = () => {
   }, []);
 
   return (
-    <Row>
-      <Col span={24}>
-        <Slider {...settings}>
-          {carousels.map((item) => {
-            return (
-              <div style={{ backgroundColor: item.backgroundColor }}>
-                <img src={item.imageUrl} />
-              </div>
-            );
-          })}
-        </Slider>
-      </Col>
-    </Row>
+    <Slider {...settings}>
+      {carousels.map((item) => {
+        return (
+          <div
+            style={{
+              backgroundColor: item.backgroundColor,
+            }}
+            key={item.id}>
+            <img
+              src={item.imageUrl}
+              alt='carousel'
+              style={{ width: '100%', height: '300px' }}
+            />
+          </div>
+        );
+      })}
+    </Slider>
   );
 };
 
