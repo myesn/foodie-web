@@ -48,7 +48,7 @@ instance.interceptors.response.use(
       return Promise.reject(response);
     }
 
-    return Promise.resolve(response);
+    return Promise.resolve(response.data);
   },
   (error) => {
     // Any status codes that falls outside the range of 2xx cause this function to trigger

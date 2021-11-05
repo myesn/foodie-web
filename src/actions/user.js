@@ -23,7 +23,7 @@ export const signinAction =
       return Promise.reject(error);
     }
 
-    dispatch(signIn(data.data));
+    dispatch(signIn(data));
   };
 
 export const signoutAction =
