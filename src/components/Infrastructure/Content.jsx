@@ -1,10 +1,10 @@
 import React from 'react';
-import { Layout, Skeleton } from '@douyinfe/semi-ui';
+import { Layout } from '@douyinfe/semi-ui';
 
 const Content = (props) => (
   <Layout.Content
     style={{
-      padding: '24px',
+      // padding: '24px',
       backgroundColor: 'var(--semi-color-bg-0)',
     }}>
     {/* <Breadcrumb
@@ -13,7 +13,7 @@ const Content = (props) => (
       }}
       routes={['首页', '当这个页面标题很长时需要省略', '上一页', '详情页']}
     /> */}
-    <div
+    {/* <div
       style={{
         borderRadius: '10px',
         border: '1px solid var(--semi-color-border)',
@@ -23,7 +23,8 @@ const Content = (props) => (
       <Skeleton placeholder={<Skeleton.Paragraph rows={2} />} loading={false}>
         {props.children}
       </Skeleton>
-    </div>
+    </div> */}
+    {props.children}
   </Layout.Content>
 );
 

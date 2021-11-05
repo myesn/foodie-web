@@ -8,6 +8,7 @@ const Footer = () => (
       display: 'flex',
       justifyContent: 'space-between',
       padding: '20px',
+      marginTop: '20px',
       color: 'var(--semi-color-text-2)',
       backgroundColor: 'rgba(var(--semi-grey-0), 1)',
     }}>
