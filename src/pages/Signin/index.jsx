@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Form,
   Button,
@@ -19,7 +19,7 @@ const Signin = () => {
   const { Text } = Typography;
   const [signInLoading, setSignInLoading] = useState(false);
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
   const inputProps = {
     labelPosition: 'left',
     labelAlign: 'right',
@@ -40,7 +40,7 @@ const Signin = () => {
     }
 
     Toast.success('登录成功');
-    history.push('/');
+    navigate('/');
   };
 
   return (

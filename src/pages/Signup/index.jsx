@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Form, Button, Col, Row, Toast } from '@douyinfe/semi-ui';
 
 import awaiter from '../../utils/awaiter';
@@ -8,7 +8,7 @@ import api from '../../api';
 
 const Signup = () => {
   const [signupLoading, setSignupLoading] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
   const inputProps = {
     labelPosition: 'left',
     labelAlign: 'right',
@@ -44,7 +44,7 @@ const Signup = () => {
     }
 
     Toast.success('注册成功');
-    history.push('/signin');
+    navigate('/signin');
   };
 
   return (

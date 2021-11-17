@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Avatar, Dropdown, Typography } from '@douyinfe/semi-ui';
 
 import awaiter from '../../../utils/awaiter';
@@ -15,7 +15,7 @@ const LoggedInAvatar = () => {
   const nickName = useSelector(selectNickName);
   const userId = useSelector(selectUserId);
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
   const { Text } = Typography;
 
   const handleSignoutClick = async () => {
@@ -24,7 +24,7 @@ const LoggedInAvatar = () => {
       return;
     }
   };
-  const handleAvatarClick = () => history.push('/profile');
+  const handleAvatarClick = () => navigate('/profile');
   const menus = [
     {
       node: 'title',

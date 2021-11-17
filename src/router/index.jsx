@@ -1,5 +1,5 @@
 // import { lazy } from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Routes , Route } from 'react-router-dom';
 
 import App from '../pages/App';
 import Home from '../pages/Home';
@@ -18,17 +18,13 @@ const Router = () => {
   return (
     <BrowserRouter>
       <App path='/'>
-        <Switch>
-          <Route exact path='/'>
-            <Redirect to='/home' />
-          </Route>
-
+        <Routes>
           <Route path='/home' component={withInfrastructure(Home)} />
           <Route path='/signup' component={Signup} />
           <Route path='/signin' component={Signin} />
           <Route path='/profile' component={withInfrastructure(Profile)} />
           <Route path='*' component={NotFound} />
-        </Switch>
+        </Routes>
       </App>
     </BrowserRouter>
   );

@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Layout, Nav } from '@douyinfe/semi-ui';
 import { IconSemiLogo } from '@douyinfe/semi-icons';
 
@@ -12,7 +12,7 @@ const getUserButtonView = (isAuthenticated) => {
 };
 
 const Header = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const isAuthenticated = useSelector(selectIsAuthenticated);
   const userButtonView = getUserButtonView(isAuthenticated);
 
@@ -22,7 +22,7 @@ const Header = () => {
         <Nav.Header>
           <IconSemiLogo
             style={{ fontSize: 36 }}
-            onClick={() => history.push('/')}
+            onClick={() => navigate('/')}
           />
         </Nav.Header>
         <Nav.Footer style={{ marginRight: 10 }}>{userButtonView}</Nav.Footer>
