@@ -7,3 +7,7 @@ export function fetchCarousels(username) {
 export function fetchRootCategories() {
   return get('/home/category');
 }
+
+export function fetchSubCategories(rootCategoryId) {
+  return get(`/home/category/${rootCategoryId}`);
+}

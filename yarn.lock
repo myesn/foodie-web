@@ -1165,10 +1165,17 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.13", "@babel/runtime@^7.15.4", "@babel/runtime@^7.2.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.15.4", "@babel/runtime@^7.2.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.16.0"
   resolved "https://registry.npmmirror.com/@babel/runtime/download/@babel/runtime-7.16.0.tgz#e27b977f2e2088ba24748bf99b5e1dece64e4f0b"
   integrity sha1-4nuXfy4giLokdIv5m14d7OZOTws=
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.7.6":
+  version "7.16.3"
+  resolved "https://registry.npmmirror.com/@babel/runtime/download/@babel/runtime-7.16.3.tgz?cache=0&sync_timestamp=1636495247319&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.16.3.tgz#b86f0db02a04187a3c17caa77de69840165d42d5"
+  integrity sha512-WBwekcqacdY2e9AF/Q7WLFUWmdJGJTkbjqTjoMDgXkVZ3ZRUvOPsLb5KdwISoQVsbP+DQzVZW4Zhci0DvpbNTQ==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -1227,38 +1234,38 @@
   resolved "https://registry.nlark.com/@csstools/normalize.css/download/@csstools/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha1-8JULuhiBlRLUL3GX5WxRiqSRzxg=
 
-"@douyinfe/semi-animation-react@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.npmmirror.com/@douyinfe/semi-animation-react/download/@douyinfe/semi-animation-react-2.0.2.tgz#d98af6cebccc9d8e36ef0bf264c5db071ae9378d"
-  integrity sha1-2Yr2zrzMnY427wvyZMXbBxrpN40=
+"@douyinfe/semi-animation-react@2.0.8":
+  version "2.0.8"
+  resolved "https://registry.npmmirror.com/@douyinfe/semi-animation-react/download/@douyinfe/semi-animation-react-2.0.8.tgz#bca93d0b1d922bcb77647a9712c5fb08b09b28bd"
+  integrity sha512-vidrqt3SlpR1SvuRxCyQtA7YDT/GcMRLpeTRXxs9Q4BZwBE+qwXeweIUwmncM0zedykAHjSpLQ+BlwOO0gvR8w==
   dependencies:
     "@babel/runtime-corejs3" "^7.15.4"
-    "@douyinfe/semi-animation" "2.0.2"
-    "@douyinfe/semi-animation-styled" "2.0.2"
+    "@douyinfe/semi-animation" "2.0.8"
+    "@douyinfe/semi-animation-styled" "2.0.8"
     classnames "^2.2.6"
 
-"@douyinfe/semi-animation-styled@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.npmmirror.com/@douyinfe/semi-animation-styled/download/@douyinfe/semi-animation-styled-2.0.2.tgz#8f104cc709a9e53080fdbe3b21abb7f7a478507c"
-  integrity sha1-jxBMxwmp5TCA/b47Iau396R4UHw=
+"@douyinfe/semi-animation-styled@2.0.8":
+  version "2.0.8"
+  resolved "https://registry.npmmirror.com/@douyinfe/semi-animation-styled/download/@douyinfe/semi-animation-styled-2.0.8.tgz#6db173e1b1194bd1c6c2d04ef72e468e59a62ff5"
+  integrity sha512-zjzDCW7Y33TbVqCQCl14jjFplyXcV+y6LkXsP5B4UjKDeen7OyAXM6BxINF8yzv0jePuIiEO37sXVfY108Nvpw==
   dependencies:
     "@babel/runtime-corejs3" "^7.15.4"
 
-"@douyinfe/semi-animation@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.npmmirror.com/@douyinfe/semi-animation/download/@douyinfe/semi-animation-2.0.2.tgz#e125061d3da54c8833ca746efc81b3686ea6b583"
-  integrity sha1-4SUGHT2lTIgzynRu/IGzaG6mtYM=
+"@douyinfe/semi-animation@2.0.8":
+  version "2.0.8"
+  resolved "https://registry.npmmirror.com/@douyinfe/semi-animation/download/@douyinfe/semi-animation-2.0.8.tgz#84f6166d30842121e4df03d321e6f4e807ba9dca"
+  integrity sha512-DiYTBtYOOyzWAFMptjIPhwVSzTXm+MbYikQcFnwY1x25cl+Raz5tq4bbIsDG7mQki6ySdA2X2XVFvL65RWUxoA==
   dependencies:
     "@babel/runtime-corejs3" "^7.15.4"
     bezier-easing "^2.1.0"
 
-"@douyinfe/semi-foundation@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.npmmirror.com/@douyinfe/semi-foundation/download/@douyinfe/semi-foundation-2.0.2.tgz#da018a50622d8f7b48adde1b9d4357834d20f432"
-  integrity sha1-2gGKUGItj3tIrd4bnUNXg00g9DI=
+"@douyinfe/semi-foundation@2.0.8":
+  version "2.0.8"
+  resolved "https://registry.npmmirror.com/@douyinfe/semi-foundation/download/@douyinfe/semi-foundation-2.0.8.tgz#08c9cb0de28a9a3a8ccff08e688fb8a9582841a9"
+  integrity sha512-OwhpBPQw+Vq4SDQxWF2lqghDK7TlIhXL2RxDuzdQvdL6x7kLSnOC9O0CIBZm+6dydzXWQjigIisJQ8VjPZ0LoA==
   dependencies:
     "@babel/runtime-corejs3" "^7.15.4"
-    "@douyinfe/semi-animation" "2.0.2"
+    "@douyinfe/semi-animation" "2.0.8"
     async-validator "^3.5.0"
     classnames "^2.2.6"
     date-fns "^2.9.0"
@@ -1267,38 +1274,39 @@
     memoize-one "^5.2.1"
     scroll-into-view-if-needed "^2.2.24"
 
-"@douyinfe/semi-icons@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.npmmirror.com/@douyinfe/semi-icons/download/@douyinfe/semi-icons-2.0.2.tgz#f7346e2abe5188a3eb293549683a999b9a17a4f4"
-  integrity sha1-9zRuKr5RiKPrKTVJaDqZm5oXpPQ=
+"@douyinfe/semi-icons@2.0.8":
+  version "2.0.8"
+  resolved "https://registry.npmmirror.com/@douyinfe/semi-icons/download/@douyinfe/semi-icons-2.0.8.tgz#fba975303a86e3340d5b4ec653dc23e2c9d29bb8"
+  integrity sha512-Z9w6GDDN8kfLiolB8eiJtAorhMvPl4hlMChZuPlxql2xvcwFsuUVASVXMgZAf/I+NkQkUL4fsuKqXVVckgcpGQ==
+  dependencies:
+    "@babel/runtime-corejs3" "^7.15.4"
+    classnames "^2.2.6"
+
+"@douyinfe/semi-illustrations@2.0.8":
+  version "2.0.8"
+  resolved "https://registry.npmmirror.com/@douyinfe/semi-illustrations/download/@douyinfe/semi-illustrations-2.0.8.tgz#c5a336e4c954af7798e95f41d603ddfa04614e0a"
+  integrity sha512-bNVaXxfoXGBz5lsd9jJPbSXHUkOgz0dI6daZNqFFXeo4Kpv6Cw4q+mbnAoOfVXpOInFDNTtB+nT10KlmzOj8XA==
   dependencies:
     "@babel/runtime-corejs3" "^7.15.4"
 
-"@douyinfe/semi-illustrations@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.npmmirror.com/@douyinfe/semi-illustrations/download/@douyinfe/semi-illustrations-2.0.2.tgz#f1e86e3895642c3a9551e1791001db1950e19a7a"
-  integrity sha1-8ehuOJVkLDqVUeF5EAHbGVDhmno=
-  dependencies:
-    "@babel/runtime-corejs3" "^7.15.4"
-
-"@douyinfe/semi-theme-default@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.npmmirror.com/@douyinfe/semi-theme-default/download/@douyinfe/semi-theme-default-2.0.2.tgz#10465ca2476290ce4c6cd9627e078207f00ab380"
-  integrity sha1-EEZcokdikM5MbNlifgeCB/AKs4A=
+"@douyinfe/semi-theme-default@2.0.8":
+  version "2.0.8"
+  resolved "https://registry.npmmirror.com/@douyinfe/semi-theme-default/download/@douyinfe/semi-theme-default-2.0.8.tgz#3efb8d793ace9b93bc1cb619b7f34ba99f4ea585"
+  integrity sha512-SEPJoTIYeYSKCcy5Q9Baq+N4TeqTbjo7CfsQZ15UKacrAk7OYH/Ot+KN3GJQJgWBsubzyyL8eIIESDQ4Met2EA==
   dependencies:
     glob "^7.1.6"
 
-"@douyinfe/semi-ui@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.npmmirror.com/@douyinfe/semi-ui/download/@douyinfe/semi-ui-2.0.2.tgz#718addb654d444063ba33e316622ae8e578b07d2"
-  integrity sha1-cYrdtlTURAY7oz4xZiKujleLB9I=
+"@douyinfe/semi-ui@^2.0.8":
+  version "2.0.8"
+  resolved "https://registry.npmmirror.com/@douyinfe/semi-ui/download/@douyinfe/semi-ui-2.0.8.tgz#1473cf609b2746ce95b8d9e429f971d65f76240b"
+  integrity sha512-8g2BGqt3Q6nVcbvdXYbnaxdhV+96XgZa5u+IwVu0Lg/NCcS89skWeLxMgOdTf04NaAkVNXWZXVFKffBVXShVHQ==
   dependencies:
     "@babel/runtime-corejs3" "^7.15.4"
-    "@douyinfe/semi-animation-react" "2.0.2"
-    "@douyinfe/semi-foundation" "2.0.2"
-    "@douyinfe/semi-icons" "2.0.2"
-    "@douyinfe/semi-illustrations" "2.0.2"
-    "@douyinfe/semi-theme-default" "2.0.2"
+    "@douyinfe/semi-animation-react" "2.0.8"
+    "@douyinfe/semi-foundation" "2.0.8"
+    "@douyinfe/semi-icons" "2.0.8"
+    "@douyinfe/semi-illustrations" "2.0.8"
+    "@douyinfe/semi-theme-default" "2.0.8"
     async-validator "^3.5.0"
     classnames "^2.2.6"
     copy-text-to-clipboard "^2.1.1"
@@ -5826,17 +5834,12 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.npm.taobao.org/hex-color-regex/download/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha1-TAb8y0YC/iYCs8k9+C1+fb8aio4=
 
-history@^4.9.0:
-  version "4.10.1"
-  resolved "https://registry.nlark.com/history/download/history-4.10.1.tgz?cache=0&sync_timestamp=1628891129290&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fhistory%2Fdownload%2Fhistory-4.10.1.tgz#33371a65e3a83b267434e2b3f3b1b4c58aad4cf3"
-  integrity sha1-MzcaZeOoOyZ0NOKz87G0xYqtTPM=
+history@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.npmmirror.com/history/download/history-5.1.0.tgz#2e93c09c064194d38d52ed62afd0afc9d9b01ece"
+  integrity sha1-LpPAnAZBlNONUu1ir9CvydmwHs4=
   dependencies:
-    "@babel/runtime" "^7.1.2"
-    loose-envify "^1.2.0"
-    resolve-pathname "^3.0.0"
-    tiny-invariant "^1.0.2"
-    tiny-warning "^1.0.0"
-    value-equal "^1.0.1"
+    "@babel/runtime" "^7.7.6"
 
 hmac-drbg@^1.0.1:
   version "1.0.1"
@@ -5847,7 +5850,7 @@ hmac-drbg@^1.0.1:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
+hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
   resolved "https://registry.nlark.com/hoist-non-react-statics/download/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha1-7OCsr3HWLClpwuxZ/v9CpLGoW0U=
@@ -6591,11 +6594,6 @@ is-wsl@^2.1.1, is-wsl@^2.2.0:
   integrity sha1-dKTHbnfKn9P5MvKQwX6jJs0VcnE=
   dependencies:
     is-docker "^2.0.0"
-
-isarray@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.nlark.com/isarray/download/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
-  integrity sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
 
 isarray@1.0.0, isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
@@ -7486,7 +7484,7 @@ loglevel@^1.6.8:
   resolved "https://registry.nlark.com/loglevel/download/loglevel-1.7.1.tgz#005fde2f5e6e47068f935ff28573e125ef72f197"
   integrity sha1-AF/eL15uRwaPk1/yhXPhJe9y8Zc=
 
-loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npm.taobao.org/loose-envify/download/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha1-ce5R+nvkyuwaY4OffmgtgTLTDK8=
@@ -7719,14 +7717,6 @@ min-indent@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/min-indent/download/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
   integrity sha1-pj9oFnOzBXH76LwlaGrnRu76mGk=
-
-mini-create-react-context@^0.4.0:
-  version "0.4.1"
-  resolved "https://registry.nlark.com/mini-create-react-context/download/mini-create-react-context-0.4.1.tgz#072171561bfdc922da08a60c2197a497cc2d1d5e"
-  integrity sha1-ByFxVhv9ySLaCKYMIZekl8wtHV4=
-  dependencies:
-    "@babel/runtime" "^7.12.1"
-    tiny-warning "^1.0.3"
 
 mini-css-extract-plugin@0.11.3:
   version "0.11.3"
@@ -8579,13 +8569,6 @@ path-to-regexp@0.1.7:
   version "0.1.7"
   resolved "https://registry.nlark.com/path-to-regexp/download/path-to-regexp-0.1.7.tgz?cache=0&sync_timestamp=1618847046445&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpath-to-regexp%2Fdownload%2Fpath-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
-
-path-to-regexp@^1.7.0:
-  version "1.8.0"
-  resolved "https://registry.nlark.com/path-to-regexp/download/path-to-regexp-1.8.0.tgz?cache=0&sync_timestamp=1618847046445&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpath-to-regexp%2Fdownload%2Fpath-to-regexp-1.8.0.tgz#887b3ba9d84393e87a0a0b9f4cb756198b53548a"
-  integrity sha1-iHs7qdhDk+h6CgufTLdWGYtTVIo=
-  dependencies:
-    isarray "0.0.1"
 
 path-type@^4.0.0:
   version "4.0.0"
@@ -9448,7 +9431,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@15.x, prop-types@^15.5.7, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@15.x, prop-types@^15.5.7, prop-types@^15.6.0, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.nlark.com/prop-types/download/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha1-UsQedbjIfnK52TYOAga5ncv/psU=
@@ -9681,7 +9664,7 @@ react-error-overlay@^6.0.9:
   resolved "https://registry.npmmirror.com/react-error-overlay/download/react-error-overlay-6.0.9.tgz?cache=0&sync_timestamp=1633373332600&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Freact-error-overlay%2Fdownload%2Freact-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
   integrity sha1-PHQwEMk1lgjDdezWvHbzXZOZWwo=
 
-react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
+react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.npmmirror.com/react-is/download/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
@@ -9716,34 +9699,20 @@ react-resizable@^1.8.0:
     prop-types "15.x"
     react-draggable "^4.0.3"
 
-react-router-dom@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.npmmirror.com/react-router-dom/download/react-router-dom-5.3.0.tgz#da1bfb535a0e89a712a93b97dd76f47ad1f32363"
-  integrity sha1-2hv7U1oOiacSqTuX3Xb0etHzI2M=
+react-router-dom@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.npmmirror.com/react-router-dom/download/react-router-dom-6.0.2.tgz#860cefa697b9d4965eced3f91e82cdbc5995f3ad"
+  integrity sha512-cOpJ4B6raFutr0EG8O/M2fEoyQmwvZWomf1c6W2YXBZuFBx8oTk/zqjXghwScyhfrtnt0lANXV2182NQblRxFA==
   dependencies:
-    "@babel/runtime" "^7.12.13"
-    history "^4.9.0"
-    loose-envify "^1.3.1"
-    prop-types "^15.6.2"
-    react-router "5.2.1"
-    tiny-invariant "^1.0.2"
-    tiny-warning "^1.0.0"
+    history "^5.1.0"
+    react-router "6.0.2"
 
-react-router@5.2.1:
-  version "5.2.1"
-  resolved "https://registry.npmmirror.com/react-router/download/react-router-5.2.1.tgz?cache=0&sync_timestamp=1635150639599&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Freact-router%2Fdownload%2Freact-router-5.2.1.tgz#4d2e4e9d5ae9425091845b8dbc6d9d276239774d"
-  integrity sha1-TS5OnVrpQlCRhFuNvG2dJ2I5d00=
+react-router@6.0.2:
+  version "6.0.2"
+  resolved "https://registry.npmmirror.com/react-router/download/react-router-6.0.2.tgz#bd2b0fa84fd1d152671e9f654d9c0b1f5a7c86da"
+  integrity sha512-8/Wm3Ed8t7TuedXjAvV39+c8j0vwrI5qVsYqjFr5WkJjsJpEvNSoLRUbtqSEYzqaTUj1IV+sbPJxvO+accvU0Q==
   dependencies:
-    "@babel/runtime" "^7.12.13"
-    history "^4.9.0"
-    hoist-non-react-statics "^3.1.0"
-    loose-envify "^1.3.1"
-    mini-create-react-context "^0.4.0"
-    path-to-regexp "^1.7.0"
-    prop-types "^15.6.2"
-    react-is "^16.6.0"
-    tiny-invariant "^1.0.2"
-    tiny-warning "^1.0.0"
+    history "^5.1.0"
 
 react-scripts@4.0.3:
   version "4.0.3"
@@ -9941,7 +9910,7 @@ redux-thunk@^2.3.0, redux-thunk@^2.4.0:
   resolved "https://registry.npmmirror.com/redux-thunk/download/redux-thunk-2.4.0.tgz#ac89e1d6b9bdb9ee49ce69a69071be41bbd82d67"
   integrity sha1-rInh1rm9ue5JzmmmkHG+QbvYLWc=
 
-redux@^4.0.0, redux@^4.1.0, redux@^4.1.1:
+redux@^4.0.0, redux@^4.1.0, redux@^4.1.2:
   version "4.1.2"
   resolved "https://registry.npmmirror.com/redux/download/redux-4.1.2.tgz#140f35426d99bb4729af760afcf79eaaac407104"
   integrity sha1-FA81Qm2Zu0cpr3YK/PeeqqxAcQQ=
@@ -10147,11 +10116,6 @@ resolve-from@^5.0.0:
   version "5.0.0"
   resolved "https://registry.nlark.com/resolve-from/download/resolve-from-5.0.0.tgz#c35225843df8f776df21c57557bc087e9dfdfc69"
   integrity sha1-w1IlhD3493bfIcV1V7wIfp39/Gk=
-
-resolve-pathname@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npm.taobao.org/resolve-pathname/download/resolve-pathname-3.0.0.tgz#99d02224d3cf263689becbb393bc560313025dcd"
-  integrity sha1-mdAiJNPPJjaJvsuzk7xWAxMCXc0=
 
 resolve-url-loader@^3.1.2:
   version "3.1.4"
@@ -11326,16 +11290,6 @@ timsort@^0.3.0:
   resolved "https://registry.npm.taobao.org/timsort/download/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tiny-invariant@^1.0.2:
-  version "1.1.0"
-  resolved "https://registry.npmmirror.com/tiny-invariant/download/tiny-invariant-1.1.0.tgz#634c5f8efdc27714b7f386c35e6760991d230875"
-  integrity sha1-Y0xfjv3CdxS384bDXmdgmR0jCHU=
-
-tiny-warning@^1.0.0, tiny-warning@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.npm.taobao.org/tiny-warning/download/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
-  integrity sha1-lKMNtFPfTGQ9D9VmBg1gqHXYR1Q=
-
 tmpl@1.0.5:
   version "1.0.5"
   resolved "https://registry.nlark.com/tmpl/download/tmpl-1.0.5.tgz?cache=0&sync_timestamp=1630997200432&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftmpl%2Fdownload%2Ftmpl-1.0.5.tgz#8683e0b902bb9c20c4f726e3c0b69f36518c07cc"
@@ -11789,11 +11743,6 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
-
-value-equal@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npm.taobao.org/value-equal/download/value-equal-1.0.1.tgz#1e0b794c734c5c0cade179c437d356d931a34d6c"
-  integrity sha1-Hgt5THNMXAyt4XnEN9NW2TGjTWw=
 
 vary@~1.1.2:
   version "1.1.2"
