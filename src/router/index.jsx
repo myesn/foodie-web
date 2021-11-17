@@ -1,5 +1,5 @@
 // import { lazy } from 'react';
-import { BrowserRouter, Switch, Routes , Route } from 'react-router-dom';
+import { BrowserRouter, Routes , Route } from 'react-router-dom';
 
 import App from '../pages/App';
 import Home from '../pages/Home';
