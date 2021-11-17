@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button, Col, Row, Toast } from '@douyinfe/semi-ui';
 
-import awaiter from '../../utils/awaiter';
+import task from '../../utils/task';
 import { required, min } from '../../utils/formRule';
 import api from '../../api';
 
@@ -21,7 +21,7 @@ const Signup = () => {
       return '用户名不能为空';
     }
 
-    const [, error] = await awaiter(api.user.checkUsername(value));
+    const [, error] = await task(api.user.checkUsername(value));
     if (error) {
       return error.response.data.message;
     }
@@ -30,13 +30,13 @@ const Signup = () => {
   };
 
   const handleSignupClick = async (formApi) => {
-    const [values, formError] = await awaiter(formApi.validate());
+    const [values, formError] = await task(formApi.validate());
     if (formError) {
       return;
     }
 
     setSignupLoading(true);
-    const [, error] = await awaiter(api.user.signup(values));
+    const [, error] = await task(api.user.signup(values));
     setSignupLoading(false);
 
     if (error) {

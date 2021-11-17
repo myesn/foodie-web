@@ -12,7 +12,7 @@ import {
 } from '@douyinfe/semi-ui';
 
 import { required, min } from '../../utils/formRule';
-import awaiter from '../../utils/awaiter';
+import task from '../../utils/task';
 import { signinAction } from '../../actions/user';
 
 const Signin = () => {
@@ -27,13 +27,13 @@ const Signin = () => {
     style: { width: '176px' },
   };
   const handleSignInClick = async (formApi) => {
-    const [values, formError] = await awaiter(formApi.validate());
+    const [values, formError] = await task(formApi.validate());
     if (formError) {
       return;
     }
 
     setSignInLoading(true);
-    const [, error] = await awaiter(dispatch(signinAction(values)));
+    const [, error] = await task(dispatch(signinAction(values)));
     setSignInLoading(false);
     if (error) {
       return;

@@ -1,6 +1,6 @@
 import * as actions from '../constants/user';
 import { initialState } from '../reducers/user';
-import awaiter from '../utils/awaiter';
+import task from '../utils/task';
 
 const signIn = (current) => ({
   type: actions.SIGNIN,
@@ -18,7 +18,7 @@ const signOut = () => ({
 export const signinAction =
   (values) =>
   async (dispatch, getState, { user }) => {
-    const [data, error] = await awaiter(user.signin(values));
+    const [data, error] = await task(user.signin(values));
     if (error) {
       return Promise.reject(error);
     }
@@ -29,7 +29,7 @@ export const signinAction =
 export const signoutAction =
   (userId) =>
   async (dispatch, getState, { user }) => {
-    const [, error] = await awaiter(user.signout(userId));
+    const [, error] = await task(user.signout(userId));
     if (error) {
       return Promise.reject(error);
     }

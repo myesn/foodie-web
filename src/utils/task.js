@@ -1,4 +1,4 @@
-async function awaiter(promise) {
+async function task(promise) {
   try {
     const data = await promise;
     return [data, null];
@@ -7,4 +7,4 @@ async function awaiter(promise) {
   }
 }
 
-export default awaiter;
+export default task;

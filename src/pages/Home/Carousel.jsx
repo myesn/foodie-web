@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 
 import api from '../../api';
-import awaiter from '../../utils/awaiter';
+import task from '../../utils/task';
 
 import 'slick-carousel/slick/slick.scss';
 import 'slick-carousel/slick/slick-theme.scss';
@@ -17,7 +17,7 @@ const Carousel = () => {
     slidesToScroll: 1,
   };
   const retriveCarousels = async () => {
-    const [data, error] = await awaiter(api.home.fetchCarousels());
+    const [data, error] = await task(api.home.fetchCarousels());
     if (error) {
       return;
     }

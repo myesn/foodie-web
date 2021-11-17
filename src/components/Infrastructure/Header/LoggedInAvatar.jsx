@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Avatar, Dropdown, Typography } from '@douyinfe/semi-ui';
 
-import awaiter from '../../../utils/awaiter';
+import task from '../../../utils/task';
 import {
   selectAvatar,
   selectNickName,
@@ -19,7 +19,7 @@ const LoggedInAvatar = () => {
   const { Text } = Typography;
 
   const handleSignoutClick = async () => {
-    const [, error] = await awaiter(dispatch(signoutAction(userId)));
+    const [, error] = await task(dispatch(signoutAction(userId)));
     if (error) {
       return;
     }

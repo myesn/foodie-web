@@ -2,13 +2,13 @@ import { useState, useEffect, useCallback } from 'react';
 import { Nav } from '@douyinfe/semi-ui';
 
 import api from '../../api';
-import awaiter from '../../utils/awaiter';
+import task from '../../utils/task';
 
 const Navigation = () => {
   const [selectedRootCategoryId, setSelectedRootCategoryId] = useState(null);
   const [categories, setCategories] = useState([]);
   const retriveRootCategories = useCallback(async () => {
-    const [data, error] = await awaiter(api.home.fetchRootCategories());
+    const [data, error] = await task(api.home.fetchRootCategories());
     if (error) {
       return;
     }
@@ -19,7 +19,7 @@ const Navigation = () => {
   }, []);
 
   const retriveSubCategories = useCallback(async () => {
-    const [data, error] = await awaiter(
+    const [data, error] = await task(
       api.home.fetchSubCategories(selectedRootCategoryId)
     );
     if (error) {
