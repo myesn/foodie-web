@@ -1,4 +1,5 @@
 import { Layout } from '@douyinfe/semi-ui';
+import { Outlet } from 'react-router';
 
 import Header from './Header';
 import Content from './Content';
@@ -8,7 +9,9 @@ const Infrastructure = (props) => {
   return (
     <Layout style={{ border: '1px solid var(--semi-color-border)' }}>
       <Header />
-      <Content>{props.children}</Content>
+      <Content>
+        <Outlet />
+      </Content>
       <Footer />
     </Layout>
   );
