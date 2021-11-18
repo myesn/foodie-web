@@ -17,7 +17,6 @@ export default function Navigation() {
     // root category 的 itemKey 变为字符串类型，方便后续操作
     setCategories(data.map((x) => ({ itemKey: `${x.id}`, text: x.name })));
   };
-
   const retriveSubCategories = async (rootCategoryId) => {
     const [data, error] = await task(
       api.home.fetchSubCategories(rootCategoryId)
@@ -49,6 +48,38 @@ export default function Navigation() {
     };
     setCategories([...categories]);
   };
+  const handleNavClick = async ({ itemKey, domEvent, isOpen }) => {
+    const itemKeys = itemKey.split(levelSeparator);
+
+    // 如果已经获取了二级或三级数据，就不再执行后续
+    if (categories.find((x) => x.itemKey === itemKeys[0])?.items) {
+      if (itemKeys.length === 1) {
+        // 一级菜单
+        setOpenKeys(isOpen ? [itemKey] : []);
+      } else if (itemKeys.length === 2) {
+        // 二级菜单
+        setOpenKeys(isOpen ? [itemKeys[0], itemKey] : [itemKeys[0]]);
+      } else if (itemKeys.length === 3) {
+        // 三级菜单
+        setOpenKeys([
+          itemKeys[0],
+          `${itemKeys[0]}${levelSeparator}${itemKeys[1]}`,
+          itemKey,
+        ]);
+      } else throw Error('不支持的菜单层级');
+
+      return;
+    }
+
+    // 只有一级分类才调用获取下级分类接口，二级或三级分类不调用接口
+    if (itemKey.includes(levelSeparator)) {
+      return;
+    }
+
+    await retriveSubCategories(itemKey);
+    setOpenKeys([itemKey]);
+    // console.log('click: ', itemKey, domEvent, isOpen);
+  };
 
   useEffect(() => {
     retriveRootCategories();
@@ -59,37 +90,8 @@ export default function Navigation() {
       limitIndent={false}
       items={categories}
       openKeys={openKeys}
-      onClick={async ({ itemKey, domEvent, isOpen }) => {
-        const itemKeys = itemKey.split(levelSeparator);
-
-        // 如果已经获取了二级或三级数据，就不再执行后续
-        if (categories.find((x) => x.itemKey === itemKeys[0])?.items) {
-          if (itemKeys.length === 1) {
-            // 一级菜单
-            setOpenKeys(isOpen ? [itemKey] : []);
-          } else if (itemKeys.length === 2) {
-            // 二级菜单
-            setOpenKeys(isOpen ? [itemKeys[0], itemKey] : [itemKeys[0]]);
-          } else if (itemKeys.length === 3) {
-            // 三级菜单
-            setOpenKeys([
-              itemKeys[0],
-              `${itemKeys[0]}${levelSeparator}${itemKeys[1]}`,
-              itemKey,
-            ]);
-          } else throw Error('不支持的菜单层级');
-
-          return;
-        }
-
-        // 只有一级分类才调用获取下级分类接口，二级或三级分类不调用接口
-        if (itemKey.includes(levelSeparator)) {
-          return;
-        }
-
-        await retriveSubCategories(itemKey);
-        setOpenKeys([itemKey]);
-        // console.log('click: ', itemKey, domEvent, isOpen);
+      onClick={({ itemKey, domEvent, isOpen }) => {
+        handleNavClick({ itemKey, domEvent, isOpen });
       }}
     />
   );
