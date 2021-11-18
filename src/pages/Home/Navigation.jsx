@@ -32,14 +32,14 @@ export default function Navigation() {
     const items = data.map(({ id, name, subCategories }) => {
       const itemKey = `${rootCategoryId}${levelSeparator}${id}`;
       const items = subCategories.map(({ subId, subName }) => {
-        console.log('level3: ', `${itemKey}${levelSeparator}${subId}`);
+        // console.log('level3: ', `${itemKey}${levelSeparator}${subId}`);
         return {
           itemKey: `${itemKey}${levelSeparator}${subId}`,
           text: subName,
         };
       });
 
-      console.log('level2: ', itemKey);
+      // console.log('level2: ', itemKey);
       return { itemKey, text: name, items };
     });
 
