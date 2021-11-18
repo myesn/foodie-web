@@ -82,7 +82,7 @@ export default function Navigation() {
           return;
         }
 
-        // 二级或三级分类
+        // 只有一级分类才调用获取下级分类接口，二级或三级分类不调用接口
         if (itemKey.includes(levelSeparator)) {
           return;
         }
