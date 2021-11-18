@@ -1,73 +1,96 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { Nav } from '@douyinfe/semi-ui';
 
 import api from '../../api';
 import task from '../../utils/task';
 
-const Navigation = () => {
-  const [selectedRootCategoryId, setSelectedRootCategoryId] = useState(null);
+export default function Navigation() {
   const [categories, setCategories] = useState([]);
-  const retriveRootCategories = useCallback(async () => {
+  const [openKeys, setOpenKeys] = useState([]);
+  const levelSeparator = '-';
+  const retriveRootCategories = async () => {
     const [data, error] = await task(api.home.fetchRootCategories());
     if (error) {
       return;
     }
 
-    setCategories(
-      data.map((x) => ({ itemKey: x.id, text: x.name, items: [] }))
-    );
-  }, []);
+    // root category 的 itemKey 变为字符串类型，方便后续操作
+    setCategories(data.map((x) => ({ itemKey: `${x.id}`, text: x.name })));
+  };
 
-  const retriveSubCategories = useCallback(async () => {
+  const retriveSubCategories = async (rootCategoryId) => {
     const [data, error] = await task(
-      api.home.fetchSubCategories(selectedRootCategoryId)
+      api.home.fetchSubCategories(rootCategoryId)
     );
     if (error) {
       return;
     }
-    const findRootCategory = () =>
-      categories.find(({ itemKey }) => itemKey === selectedRootCategoryId);
-    const findRootCategoryIndex = () =>
-      categories.findIndex(({ itemKey }) => itemKey === selectedRootCategoryId);
-    const rootCategory = findRootCategory();
-    const rootCategoryIndex = findRootCategoryIndex();
-    rootCategory.items = data.map(({ id, name, subCategories }) => {
-      const items = subCategories.map(({ subId, subName }) => ({
-        itemKey: subId,
-        text: subName,
-      }));
 
-      return { itemKey: id, text: name, items };
+    const rootCategoryIndex = categories.findIndex(
+      ({ itemKey }) => itemKey === rootCategoryId
+    );
+    const items = data.map(({ id, name, subCategories }) => {
+      const itemKey = `${rootCategoryId}${levelSeparator}${id}`;
+      const items = subCategories.map(({ subId, subName }) => {
+        console.log('level3: ', `${itemKey}${levelSeparator}${subId}`);
+        return {
+          itemKey: `${itemKey}${levelSeparator}${subId}`,
+          text: subName,
+        };
+      });
+
+      console.log('level2: ', itemKey);
+      return { itemKey, text: name, items };
     });
 
-    categories[rootCategoryIndex] = rootCategory;
-
-    setCategories(categories);
-  }, [selectedRootCategoryId]);
+    categories[rootCategoryIndex] = {
+      ...categories[rootCategoryIndex],
+      items,
+    };
+    setCategories([...categories]);
+  };
 
   useEffect(() => {
     retriveRootCategories();
-  }, [retriveRootCategories]);
-
-  useEffect(() => {
-    if (!selectedRootCategoryId) {
-      return;
-    }
-
-    retriveSubCategories();
-  }, [retriveSubCategories]);
+  }, []);
 
   return (
     <Nav
-      mode='vertical'
-      defaultSelectedKeys={['Home']}
+      limitIndent={false}
       items={categories}
-      onClick={({ itemKey, domEvent, isOpen }) => {
-        setSelectedRootCategoryId(itemKey);
+      openKeys={openKeys}
+      onClick={async ({ itemKey, domEvent, isOpen }) => {
+        const itemKeys = itemKey.split(levelSeparator);
+
+        // 如果已经获取了二级或三级数据，就不再执行后续
+        if (categories.find((x) => x.itemKey === itemKeys[0])?.items) {
+          if (itemKeys.length === 1) {
+            // 一级菜单
+            setOpenKeys(isOpen ? [itemKey] : []);
+          } else if (itemKeys.length === 2) {
+            // 二级菜单
+            setOpenKeys(isOpen ? [itemKeys[0], itemKey] : [itemKeys[0]]);
+          } else if (itemKeys.length === 3) {
+            // 三级菜单
+            setOpenKeys([
+              itemKeys[0],
+              `${itemKeys[0]}${levelSeparator}${itemKeys[1]}`,
+              itemKey,
+            ]);
+          } else throw Error('不支持的菜单层级');
+
+          return;
+        }
+
+        // 二级或三级分类
+        if (itemKey.includes(levelSeparator)) {
+          return;
+        }
+
+        await retriveSubCategories(itemKey);
+        setOpenKeys([itemKey]);
         // console.log('click: ', itemKey, domEvent, isOpen);
       }}
     />
   );
-};
-
-export default Navigation;
+}
