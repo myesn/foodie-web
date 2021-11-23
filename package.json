@@ -6,6 +6,7 @@
     "@douyinfe/semi-ui": "^2.0.8",
     "@reduxjs/toolkit": "^1.6.2",
     "axios": "^0.24.0",
+    "jinrishici": "^1.0.6",
     "lodash": "^4.17.21",
     "node-sass": "^6.0.1",
     "nprogress": "^0.2.0",
