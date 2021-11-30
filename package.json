@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@douyinfe/semi-ui": "^2.0.8",
+    "@douyinfe/semi-ui": "^2.1.1",
     "@reduxjs/toolkit": "^1.6.2",
     "axios": "^0.24.0",
     "jinrishici": "^1.0.6",
     "lodash": "^4.17.21",
-    "node-sass": "^6.0.1",
     "nprogress": "^0.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -18,7 +17,7 @@
     "react-slick": "^0.28.1",
     "redux": "^4.1.2",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.4.0",
+    "redux-thunk": "^2.4.1",
     "reset-css": "^5.0.1",
     "slick-carousel": "^1.8.1",
     "store": "^2.0.12"
@@ -48,7 +47,9 @@
     ]
   },
   "devDependencies": {
+    "node-sass": "^6.0.1",
     "redux-devtools-extension": "^2.13.9",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "sass-loader": "^12.3.0"
   }
 }
