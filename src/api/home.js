@@ -11,3 +11,7 @@ export function fetchRootCategories() {
 export function fetchSubCategories(rootCategoryId) {
   return get(`/home/category/${rootCategoryId}`);
 }
+
+export function fetchCategorySixItems(rootCategoryId) {
+  return get(`/home/category/six-items/${rootCategoryId}`);
+}
