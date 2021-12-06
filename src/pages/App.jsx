@@ -1,12 +1,13 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
 
+import Infrastructure from '../components/Infrastructure';
+import NotFound from '../pages/NotFound';
 import Home from '../pages/Home';
 import Signup from '../pages/Signup';
 import Signin from '../pages/Signin';
 import Profile from '../pages/Profile';
-import NotFound from '../pages/NotFound';
-import Infrastructure from '../components/Infrastructure';
+import ItemDetail from '../pages/Item/Detail';
 
 export default function App() {
   const routes = [
@@ -19,6 +20,10 @@ export default function App() {
         {
           path: '/profile',
           element: <Profile />,
+        },
+        {
+          path: '/item/detail',
+          element: <ItemDetail />,
         },
       ],
     },

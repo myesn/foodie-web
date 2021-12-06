@@ -1,4 +1,5 @@
 import { Card, List } from '@douyinfe/semi-ui';
+import { useNavigate } from 'react-router-dom';
 
 export default function CategoryItem({
   rootCategoryName,
@@ -7,7 +8,7 @@ export default function CategoryItem({
   items,
 }) {
   const { Meta } = Card;
-  const data = items?.map((item) => item.itemName);
+  const navigate = useNavigate();
 
   return (
     <Card
@@ -18,8 +19,13 @@ export default function CategoryItem({
       }}>
       <List
         bordered={false}
-        dataSource={data}
-        renderItem={(item) => <List.Item>{item}</List.Item>}
+        dataSource={items}
+        renderItem={(item) => (
+          <List.Item
+            onClick={() => navigate(`/item/detail?itemId=${item.itemId}`)}>
+            {item.itemName}
+          </List.Item>
+        )}
       />
     </Card>
   );
